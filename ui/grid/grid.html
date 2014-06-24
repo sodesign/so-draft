@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app>
+<head>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" type="text/css" href="grid.css">
+</head>
+<body>
+<div ng-controller="gridCtrl">
+	<button ng-click="addRow()">+Row</button>
+	<button ng-click="deleteRow()">-Row</button>
+	<button ng-click="addColumn()">+Column</button>
+	<button ng-click="deleteColumn()">-Column</button>
+
+	<div class="grid vlayout" style="width:600px">
+		<div class="row unflex hlayout" ng-repeat="row in rows">
+			<div class="column unflex" ng-repeat="column in row">{{row[$index]}}</div>
+		</div>
+	</div>
+</div>
+
+<br>
+<div class="grid vlayout test">
+	<div class="row unflex hlayout">
+		<div class="column unflex">1</div>
+		<div class="column unflex"></div>
+		<div class="column unflex"></div>
+	</div>
+	<div class="row unflex hlayout">
+		<div class="column unflex">2</div>
+		<div class="column unflex"></div>
+		<div class="column unflex"></div>
+	</div>
+	<div class="row unflex hlayout">
+		<div class="column unflex">3</div>
+		<div class="column unflex"></div>
+		<div class="column unflex"></div>
+	</div>
+</div>
+
+使用div进行布局，无法实现单元格合并！
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.js"></script>
+
+<script src="grid.js"></script>
+</body>
+</html>

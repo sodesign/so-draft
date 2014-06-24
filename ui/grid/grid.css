@@ -1,0 +1,64 @@
+.vlayout {
+	/* standard: IE11+, Firefox29+, Chrome34+; */
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.vlayout > .unflex {
+	align-self: stretch;
+	flex: none;
+}
+.vlayout > .autoflex {
+	align-self: stretch;
+	flex: auto;
+}
+
+.hlayout {
+	/* standard: IE11+, Firefox29+, Chrome34+; */
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+.hlayout > .unflex {
+	align-self: flex-start;
+	flex: none;
+}
+.hlayout > .autoflex {
+  align-self: flex-start;
+  flex: auto;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+.grid{
+	width: 250px;
+	height: 250px;
+	border: 1px solid #000;
+	overflow: auto;
+}
+.grid > .row{
+	border-bottom: 0px solid blue;
+	overflow: hidden;
+}
+.grid > .row:last-child{
+	border-bottom: none;
+}
+.grid > .row > .column{
+	border-right: 1px solid blue;
+	border-bottom: 1px solid blue;
+	min-width: 100px;
+	min-height: 100px;
+	background-color: #ccc;
+	height: 100%;
+}
+.grid > .row > .column:last-child{
+	border-right: none;
+}
